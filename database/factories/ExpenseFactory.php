@@ -22,9 +22,9 @@ class ExpenseFactory extends Factory
         return [
             'description' => $this->faker->sentence(4) ,
             'amount' => $this->faker->numberBetween(50, 500) ,
-            'category' => $this->faker->randomElements($expenseCategory, 1) ,
+            'category' => $this->faker->randomElement($expenseCategory) ,
             'user_id' => 1 ,
-            'payment method' => $this->faker->randomElements($paymentMethod, 1 ) ,
+            'payment_method' => $this->faker->randomElement($paymentMethod) ,
         ];
     }
 }
