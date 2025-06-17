@@ -1,6 +1,12 @@
-Blade file
+@extends('layouts.app')
 
-<table class="table">
+@section('content')
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
  <thead>
    <tr>
     <th>#</th>
@@ -27,3 +33,9 @@ Blade file
 </table> 
 
 {{$expenses->render()}}
+
+    </div>
+  </div>
+</div>
+
+@endsection

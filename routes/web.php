@@ -12,7 +12,3 @@ Route::get('/expenses', [ExpenseController::class, 'index'])->name('expense.list
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
