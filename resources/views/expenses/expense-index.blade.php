@@ -25,3 +25,5 @@ Blade file
   @endforeach
  </tbody>
 </table> 
+
+{{$expenses->render()}}

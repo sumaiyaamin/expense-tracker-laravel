@@ -8,7 +8,7 @@ class ExpenseController extends Controller
 {
     public function index(){
 
-        $expense = Expense::orderByDesc('id')->get();
+        $expense = Expense::orderByDesc('id')->paginate(5);
         return view('expenses.expense-index')->with('expenses', $expense);
     ;}
 }
