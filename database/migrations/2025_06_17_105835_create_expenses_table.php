@@ -12,20 +12,29 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('expenses', function (Blueprint $table) {
-            $table->id();
-            //description
-            $table->string('description', length: 255);
-            
-            //amount
-            $table->float('amount', precision: 53);
-            //category
-             $table->string('category', length: 100);
-             //user id
-             $table->foreignId('user_id');
-            //transaction mode
-            $table->string('payment_method', length: 100);
-            $table->timestamps();
-        });
+    $table->id();
+
+    // Description
+    $table->string('description', 255);
+
+    // Amount
+    $table->float('amount', 53);
+
+    // Category
+    $table->string('category', 100);
+
+    // User ID
+    $table->foreignId('user_id');
+
+    // Payment Method
+    $table->string('payment_method', 100);
+
+    // ✅ Add the missing date field
+    $table->date('date');
+
+    $table->timestamps();
+});
+
     }
 
     /**
