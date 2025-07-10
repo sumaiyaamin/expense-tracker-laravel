@@ -11,7 +11,8 @@ class ExpenseController extends Controller
 {
     public function index()
     {
-        $expense = Expense::orderByDesc('id')->paginate(5);
+        $expense = Expense::orderBy('id', 'asc')->paginate(5);
+
         return view('expenses.expense-index')->with('expenses', $expense);
     }
 
@@ -42,7 +43,8 @@ class ExpenseController extends Controller
 
         Expense::create($postData);
 
-        return redirect()->back()->with('success', 'Expense added successfully.');
+        return redirect()->route('expense.list')->with('success', 'Expense added successfully.');
+
     }
 
     public function view($id)
